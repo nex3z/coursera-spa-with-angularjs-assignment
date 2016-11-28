@@ -2,20 +2,23 @@
 'use strict';
 
 angular.module('LunchCheck', [])
+.controller('LunchCheckController', LunchCheckController);
 
-.controller('LunchCheckController', function ($scope) {
-
+LunchCheckController.$inject = ['$scope'];
+function LunchCheckController($scope) {
   $scope.checkDishes = function () {
     var num = countDishes($scope.dishes);
     $scope.message = buildMessage(num);
   };
 
   function countDishes(dishes) {
-    var array = dishes.split(',');
     var count = 0;
-    for (var idx in array) {
-      if (array[idx].trim().length != 0) {
-        count++;
+    if (dishes) {
+      var array = dishes.split(',');
+      for (var idx in array) {
+        if (array[idx].trim().length != 0) {
+          count++;
+        }
       }
     }
     return count;
@@ -31,6 +34,6 @@ angular.module('LunchCheck', [])
       return 'Too much!';
     }
   }
-});
+}
 
 })();
