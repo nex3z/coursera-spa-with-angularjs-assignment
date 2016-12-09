@@ -1,0 +1,41 @@
+.input {
+  float:left;
+  clear:right;
+  width: 100%;
+}
+
+.button {
+  float:right;
+  clear: left;
+}
+
+.demo-card-wide {
+  width: 800px;
+  margin: auto;
+}
+
+.page-content {
+  padding-top: 32px;
+}
+
+.mdl-card {
+  min-height: 0px;
+}
+
+.mdl-card__supporting-text {
+  width: auto;
+}
+
+#search {
+  padding: 8px 16px;
+}
+
+#result {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding: 16px;
+}
+
+.message {
+  padding: 8px 16px;
+}
