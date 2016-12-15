@@ -1,0 +1,16 @@
+<div class="container">
+
+  <div ng-if="myInfoCtrl.userPref === undefined"> 
+    Not Signed Up Yet. Sign up Now!
+  </div>
+
+  <div ng-if="myInfoCtrl.userPref != undefined">
+    <div>First name: {{myInfoCtrl.userPref.firstName}} </div>
+    <div>Last name: {{myInfoCtrl.userPref.lastName}} </div>
+    <div>Email: {{myInfoCtrl.userPref.email}} </div>
+    <div>Phone: {{myInfoCtrl.userPref.phone}} </div>
+    <div>Favourite dish: </div>
+    <menu-item menu-item="myInfoCtrl.userPref.favouriteMenuItem"></menu-item>
+  </div>
+
+</div>
