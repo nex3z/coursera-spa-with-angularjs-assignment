@@ -36,24 +36,25 @@
         </span>
       <br>
 
-      <input type="text" name="favourite" placeholder="Your favourite dish" class="sign-up-input"
+      <input type="text" name="favourite" placeholder="Your favourite dish" class="sign-up-input" 
+             ng-focus="focused = true" ng-blur="signUpCtrl.validateFavourite(); focused = false"
         ng-model="signUpCtrl.user.favourite"
         required>
         <span ng-if="signUpForm.favourite.$error.required && signUpForm.favourite.$touched">
           Please input your favourite dish.
         </span>
-        <span ng-if="signUpCtrl.invalidDish">
+        <span ng-if="!focused && (!signUpForm.favourite.$error.required) && signUpCtrl.invalidDish">
           No such menu number exists.
         </span>
       <br>
 
       <button class="sign-up-submit"
-        ng-disabled="signUpForm.$invalid"
+        ng-disabled="signUpForm.$invalid || signUpCtrl.shortNames.indexOf(signUpCtrl.user.favourite.toLowerCase()) === -1"
         ng-click="signUpCtrl.submit()">Submit</button>
 
     </form>
   </fieldset>
 
-  <div ng-if="signUpCtrl.invalidDish === false">Your information has been saved.<div>
+  <div ng-if="signUpCtrl.saved">Your information has been saved.<div>
 
 </div>
