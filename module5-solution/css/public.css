@@ -125,6 +125,7 @@ h3.menu-item-title {
   color: black;
   font-size: 16px;
   margin-bottom: 10px;
+  width: 300px;
 }
 
 .sign-up-submit {
@@ -135,6 +136,40 @@ h3.menu-item-title {
   color: grey;
 }
 
+#sign-up-title {
+  color: white;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+#sign-up-field {
+  width: 300px;
+  margin: auto;
+}
+
+#sign-up-complete {
+  margin-top: 16px;
+}
+
+.table-borderless tbody tr td,
+.table-borderless tbody tr th,
+.table-borderless thead tr th,
+.table-borderless thead tr td,
+.table-borderless tfoot tr th,
+.table-borderless tfoot tr td {
+    border: none;
+}
+
+#user-info-table {
+  margin: auto;
+  font-size: 18px;
+  border: none;
+}
+
+#user-info-not-signed-msg {
+  display: inline-block;
+  margin: auto;
+}
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
