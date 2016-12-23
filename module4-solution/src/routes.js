@@ -20,9 +20,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     controller: 'CategoryListController as cateLstCtrl',
     resolve: {
       items: ['MenuDataService', function (MenuDataService) {
-        return MenuDataService.getAllCategories().then(function(response) {
-          return response.data;
-        });
+        return MenuDataService.getAllCategories();
       }]
     }
   })
@@ -32,9 +30,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     controller: 'ItemsController as itemsCtrl',
     resolve: {
       items: ['MenuDataService', '$stateParams', function (MenuDataService, $stateParams) {
-        return MenuDataService.getItemsForCategory($stateParams.category).then(function(response) {
-          return response.data.menu_items;
-        });
+        return MenuDataService.getItemsForCategory($stateParams.category);
       }]
     }
   });

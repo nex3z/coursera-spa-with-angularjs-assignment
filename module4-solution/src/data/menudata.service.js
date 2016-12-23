@@ -12,6 +12,8 @@ function MenuDataService($http, ApiBasePath) {
     return $http({
         method: "GET",
         url: (ApiBasePath + "/categories.json")
+    }).then(function (response) {
+      return response.data;
     });
   };
 
@@ -22,6 +24,8 @@ function MenuDataService($http, ApiBasePath) {
         params: {
             category: categoryShortName
         }
+    }).then(function (response) {
+      return response.data;
     });
   };
 }
