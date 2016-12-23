@@ -160,6 +160,10 @@ h3.menu-item-title {
     border: none;
 }
 
+.error {
+  color: red;
+}
+
 #user-info-table {
   margin: auto;
   font-size: 18px;
